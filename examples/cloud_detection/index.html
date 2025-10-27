@@ -3420,12 +3420,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     <span class="n">THIN_CLOUD</span><span class="p">,</span>
     <span class="n">CLOUD_SHADOW</span><span class="p">,</span>
 <span class="p">)</span>
-
-<span class="c1"># You can also import from geoai.tools</span>
-<span class="c1"># from geoai.tools import (</span>
-<span class="c1">#     predict_cloud_mask,</span>
-<span class="c1">#     CLEAR, THICK_CLOUD, THIN_CLOUD, CLOUD_SHADOW</span>
-<span class="c1"># )</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">import numpy as np
 import matplotlib.pyplot as plt
@@ -3447,13 +3441,7 @@ from geoai.tools.cloudmask import (
     THICK_CLOUD,
     THIN_CLOUD,
     CLOUD_SHADOW,
-)
-
-# You can also import from geoai.tools
-# from geoai.tools import (
-#     predict_cloud_mask,
-#     CLEAR, THICK_CLOUD, THIN_CLOUD, CLOUD_SHADOW
-# )</div>
+)</div>
 </div>
 </div>
 </div>
@@ -3647,7 +3635,7 @@ print(f"Value range: {image.min():.0f} - {image.max():.0f}")</div>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rgb_norm</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -3674,7 +3662,7 @@ print(f"Value range: {image.min():.0f} - {image.max():.0f}")</div>
     plt.figure(figsize=(10, 10))
     plt.imshow(rgb_norm)
     plt.title(title, fontsize=16)
-    plt.axis('off')
+    plt.axis("off")
     plt.tight_layout()
     plt.show()
 
@@ -3779,31 +3767,31 @@ print(f"Classes found: {np.unique(cloud_mask)}")</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Create colormap for cloud classes</span>
 <span class="c1"># Clear (blue), Thick Cloud (white), Thin Cloud (light gray), Shadow (dark gray)</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'#4575b4'</span><span class="p">,</span> <span class="s1">'#ffffff'</span><span class="p">,</span> <span class="s1">'#d3d3d3'</span><span class="p">,</span> <span class="s1">'#404040'</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"#4575b4"</span><span class="p">,</span> <span class="s2">"#ffffff"</span><span class="p">,</span> <span class="s2">"#d3d3d3"</span><span class="p">,</span> <span class="s2">"#404040"</span><span class="p">]</span>
 <span class="n">cmap</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud_mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Cloud Mask Classification'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud_mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">"nearest"</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Cloud Mask Classification"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s1">'Clear'</span><span class="p">,</span> <span class="s1">'Thick Cloud'</span><span class="p">,</span> <span class="s1">'Thin Cloud'</span><span class="p">,</span> <span class="s1">'Shadow'</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'X'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Y'</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s2">"Clear"</span><span class="p">,</span> <span class="s2">"Thick Cloud"</span><span class="p">,</span> <span class="s2">"Thin Cloud"</span><span class="p">,</span> <span class="s2">"Shadow"</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"X"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Y"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-6"># Create colormap for cloud classes
 # Clear (blue), Thick Cloud (white), Thin Cloud (light gray), Shadow (dark gray)
-colors = ['#4575b4', '#ffffff', '#d3d3d3', '#404040']
+colors = ["#4575b4", "#ffffff", "#d3d3d3", "#404040"]
 cmap = ListedColormap(colors)
 
 plt.figure(figsize=(12, 10))
-im = plt.imshow(cloud_mask, cmap=cmap, interpolation='nearest', vmin=0, vmax=3)
-plt.title('Cloud Mask Classification', fontsize=16)
+im = plt.imshow(cloud_mask, cmap=cmap, interpolation="nearest", vmin=0, vmax=3)
+plt.title("Cloud Mask Classification", fontsize=16)
 cbar = plt.colorbar(im, ticks=[0, 1, 2, 3])
-cbar.ax.set_yticklabels(['Clear', 'Thick Cloud', 'Thin Cloud', 'Shadow'])
-plt.xlabel('X')
-plt.ylabel('Y')
+cbar.ax.set_yticklabels(["Clear", "Thick Cloud", "Thin Cloud", "Shadow"])
+plt.xlabel("X")
+plt.ylabel("Y")
 plt.tight_layout()
 plt.show()</div>
 </div>
@@ -3909,19 +3897,19 @@ print(f"  Shadow coverage: {stats['shadow_percent']:.1f}%")</div>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud_free_strict</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'RdYlGn'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud_free_strict</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"RdYlGn"</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">"nearest"</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s1">'Strict Cloud-Free Mask</span><span class="se">\n</span><span class="s1">(</span><span class="si">{</span><span class="n">cloud_free_strict</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cloud_free_strict</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">% usable)'</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">"Strict Cloud-Free Mask</span><span class="se">\n</span><span class="s2">(</span><span class="si">{</span><span class="n">cloud_free_strict</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cloud_free_strict</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% usable)"</span><span class="p">,</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
 
-<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud_free_relaxed</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'RdYlGn'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cloud_free_relaxed</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"RdYlGn"</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">"nearest"</span><span class="p">)</span>
 <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s1">'Relaxed Cloud-Free Mask</span><span class="se">\n</span><span class="s1">(</span><span class="si">{</span><span class="n">cloud_free_relaxed</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cloud_free_relaxed</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">% usable)'</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">"Relaxed Cloud-Free Mask</span><span class="se">\n</span><span class="s2">(</span><span class="si">{</span><span class="n">cloud_free_relaxed</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cloud_free_relaxed</span><span class="o">.</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">% usable)"</span><span class="p">,</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -3938,19 +3926,19 @@ cloud_free_relaxed = create_cloud_free_mask(
 
 fig, axes = plt.subplots(1, 2, figsize=(16, 7))
 
-axes[0].imshow(cloud_free_strict, cmap='RdYlGn', interpolation='nearest')
+axes[0].imshow(cloud_free_strict, cmap="RdYlGn", interpolation="nearest")
 axes[0].set_title(
-    f'Strict Cloud-Free Mask\n({cloud_free_strict.sum() / cloud_free_strict.size * 100:.1f}% usable)',
+    f"Strict Cloud-Free Mask\n({cloud_free_strict.sum() / cloud_free_strict.size * 100:.1f}% usable)",
     fontsize=14,
 )
-axes[0].axis('off')
+axes[0].axis("off")
 
-axes[1].imshow(cloud_free_relaxed, cmap='RdYlGn', interpolation='nearest')
+axes[1].imshow(cloud_free_relaxed, cmap="RdYlGn", interpolation="nearest")
 axes[1].set_title(
-    f'Relaxed Cloud-Free Mask\n({cloud_free_relaxed.sum() / cloud_free_relaxed.size * 100:.1f}% usable)',
+    f"Relaxed Cloud-Free Mask\n({cloud_free_relaxed.sum() / cloud_free_relaxed.size * 100:.1f}% usable)",
     fontsize=14,
 )
-axes[1].axis('off')
+axes[1].axis("off")
 
 plt.tight_layout()
 plt.show()</div>
@@ -3992,7 +3980,7 @@ plt.show()</div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
 <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 
-<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Clear'</span><span class="p">,</span> <span class="s1">'Thick Cloud'</span><span class="p">,</span> <span class="s1">'Thin Cloud'</span><span class="p">,</span> <span class="s1">'Cloud Shadow'</span><span class="p">]</span>
+<span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Clear"</span><span class="p">,</span> <span class="s2">"Thick Cloud"</span><span class="p">,</span> <span class="s2">"Thin Cloud"</span><span class="p">,</span> <span class="s2">"Cloud Shadow"</span><span class="p">]</span>
 <span class="n">class_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">CLEAR</span><span class="p">,</span> <span class="n">THICK_CLOUD</span><span class="p">,</span> <span class="n">THIN_CLOUD</span><span class="p">,</span> <span class="n">CLOUD_SHADOW</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">class_names</span><span class="p">,</span> <span class="n">class_values</span><span class="p">)):</span>
@@ -4001,9 +3989,9 @@ plt.show()</div>
     <span class="n">count</span> <span class="o">=</span> <span class="n">class_mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     <span class="n">percent</span> <span class="o">=</span> <span class="n">count</span> <span class="o">/</span> <span class="n">class_mask</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="mi">100</span>
 
-    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">class_mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">'nearest'</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">count</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> pixels (</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">%)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">class_mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">"nearest"</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">count</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> pixels (</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -4011,7 +3999,7 @@ plt.show()</div>
 <div class="clipboard-copy-txt" id="cell-9">fig, axes = plt.subplots(2, 2, figsize=(14, 14))
 axes = axes.flatten()
 
-class_names = ['Clear', 'Thick Cloud', 'Thin Cloud', 'Cloud Shadow']
+class_names = ["Clear", "Thick Cloud", "Thin Cloud", "Cloud Shadow"]
 class_values = [CLEAR, THICK_CLOUD, THIN_CLOUD, CLOUD_SHADOW]
 
 for i, (name, value) in enumerate(zip(class_names, class_values)):
@@ -4020,9 +4008,9 @@ for i, (name, value) in enumerate(zip(class_names, class_values)):
     count = class_mask.sum()
     percent = count / class_mask.size * 100
 
-    axes[i].imshow(class_mask, cmap='gray', interpolation='nearest')
-    axes[i].set_title(f'{name}\n{count:,} pixels ({percent:.1f}%)', fontsize=12)
-    axes[i].axis('off')
+    axes[i].imshow(class_mask, cmap="gray", interpolation="nearest")
+    axes[i].set_title(f"{name}\n{count:,} pixels ({percent:.1f}%)", fontsize=12)
+    axes[i].axis("off")
 
 plt.tight_layout()
 plt.show()</div>
@@ -4082,15 +4070,15 @@ plt.show()</div>
 <span class="c1"># Write image to GeoTIFF (3 bands: R, G, NIR)</span>
 <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
     <span class="n">input_tif</span><span class="p">,</span>
-    <span class="s1">'w'</span><span class="p">,</span>
-    <span class="n">driver</span><span class="o">=</span><span class="s1">'GTiff'</span><span class="p">,</span>
+    <span class="s2">"w"</span><span class="p">,</span>
+    <span class="n">driver</span><span class="o">=</span><span class="s2">"GTiff"</span><span class="p">,</span>
     <span class="n">height</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
     <span class="n">width</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
     <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">dtype</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
-    <span class="n">crs</span><span class="o">=</span><span class="s1">'EPSG:4326'</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">"EPSG:4326"</span><span class="p">,</span>
     <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
-    <span class="n">compress</span><span class="o">=</span><span class="s1">'lzw'</span><span class="p">,</span>
+    <span class="n">compress</span><span class="o">=</span><span class="s2">"lzw"</span><span class="p">,</span>
 <span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
         <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
@@ -4118,15 +4106,15 @@ transform = from_bounds(
 # Write image to GeoTIFF (3 bands: R, G, NIR)
 with rasterio.open(
     input_tif,
-    'w',
-    driver='GTiff',
+    "w",
+    driver="GTiff",
     height=image.shape[1],
     width=image.shape[2],
     count=3,
     dtype=image.dtype,
-    crs='EPSG:4326',
+    crs="EPSG:4326",
     transform=transform,
-    compress='lzw',
+    compress="lzw",
 ) as dst:
     for i in range(3):
         dst.write(image[i], i + 1)
@@ -4299,13 +4287,13 @@ print("\n✓ Geospatial metadata preserved!")</div>
     <span class="n">transform</span> <span class="o">=</span> <span class="n">from_bounds</span><span class="p">(</span><span class="o">-</span><span class="mi">120</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="o">-</span><span class="mi">119</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
     <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
         <span class="n">filepath</span><span class="p">,</span>
-        <span class="s1">'w'</span><span class="p">,</span>
-        <span class="n">driver</span><span class="o">=</span><span class="s1">'GTiff'</span><span class="p">,</span>
+        <span class="s2">"w"</span><span class="p">,</span>
+        <span class="n">driver</span><span class="o">=</span><span class="s2">"GTiff"</span><span class="p">,</span>
         <span class="n">height</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
         <span class="n">width</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
         <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
         <span class="n">dtype</span><span class="o">=</span><span class="n">test_image</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span>
-        <span class="n">crs</span><span class="o">=</span><span class="s1">'EPSG:4326'</span><span class="p">,</span>
+        <span class="n">crs</span><span class="o">=</span><span class="s2">"EPSG:4326"</span><span class="p">,</span>
         <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
     <span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
@@ -4333,13 +4321,13 @@ for i, coverage in enumerate(cloud_coverages):
     transform = from_bounds(-120, 35, -119, 36, 256, 256)
     with rasterio.open(
         filepath,
-        'w',
-        driver='GTiff',
+        "w",
+        driver="GTiff",
         height=256,
         width=256,
         count=3,
         dtype=test_image.dtype,
-        crs='EPSG:4326',
+        crs="EPSG:4326",
         transform=transform,
     ) as dst:
         for j in range(3):
@@ -4649,7 +4637,7 @@ print("Cleaned up temporary files")</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 27, 2025 15:13:36 UTC"><span class="timeago" datetime="2025-10-27T15:13:36+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 27, 2025 15:13:36 UTC">2025-10-27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 27, 2025 15:22:06 UTC"><span class="timeago" datetime="2025-10-27T15:22:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 27, 2025 15:22:06 UTC">2025-10-27</span>
   </span>
 
     
