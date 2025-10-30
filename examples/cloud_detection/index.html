@@ -1946,66 +1946,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-best-practices-and-tips_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      11. Best Practices and Tips
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="11. Best Practices and Tips">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input-requirements_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Input Requirements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-tips_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Tips
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-versions_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Versions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-omnicloudmask_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use OmniCloudMask
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sensor-specific-band-indices_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sensor-Specific Band Indices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       Summary
@@ -2771,66 +2711,6 @@
         
           <li class="md-nav__item">
   <a href="#sensor-specific-band-indices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sensor-Specific Band Indices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-best-practices-and-tips_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      11. Best Practices and Tips
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="11. Best Practices and Tips">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#input-requirements_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Input Requirements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-tips_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Tips
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model-versions_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model Versions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-omnicloudmask_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use OmniCloudMask
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sensor-specific-band-indices_1" class="md-nav__link">
     <span class="md-ellipsis">
       Sensor-Specific Band Indices
     </span>
@@ -4484,51 +4364,9 @@ for output_file in output_files:
 <li>Use <strong>batch_size &gt; 1</strong> for faster batch processing</li>
 </ul>
 <h3 id="model-versions">Model Versions<a class="anchor-link" href="#model-versions">¶</a></h3><ul>
-<li><strong>v3.0</strong> (default): Latest, best accuracy</li>
-<li><strong>v2.0</strong>: Good balance of speed and accuracy</li>
-<li><strong>v1.0</strong>: Fastest, lower accuracy</li>
-</ul>
-<h3 id="when-to-use-omnicloudmask">When to Use OmniCloudMask<a class="anchor-link" href="#when-to-use-omnicloudmask">¶</a></h3><p>✓ Pre-processing satellite imagery for analysis<br/>
-✓ Filtering scenes based on cloud coverage<br/>
-✓ Creating cloud-free composites<br/>
-✓ Quality assessment of satellite data<br/>
-✓ Time series analysis (exclude cloudy observations)</p>
-<h3 id="sensor-specific-band-indices">Sensor-Specific Band Indices<a class="anchor-link" href="#sensor-specific-band-indices">¶</a></h3><p><strong>Sentinel-2:</strong></p>
-<div class="highlight"><pre><span></span><span class="n">red_band</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">green_band</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nir_band</span><span class="o">=</span><span class="mi">8</span>
-</pre></div>
-<p><strong>Landsat 8/9:</strong></p>
-<div class="highlight"><pre><span></span><span class="n">red_band</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">green_band</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nir_band</span><span class="o">=</span><span class="mi">5</span>
-</pre></div>
-<p><strong>PlanetScope:</strong></p>
-<div class="highlight"><pre><span></span><span class="n">red_band</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">green_band</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nir_band</span><span class="o">=</span><span class="mi">4</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11-best-practices-and-tips">11. Best Practices and Tips<a class="anchor-link" href="#11-best-practices-and-tips">¶</a></h2><h3 id="input-requirements">Input Requirements<a class="anchor-link" href="#input-requirements">¶</a></h3><ul>
-<li><strong>Bands</strong>: Requires Red, Green, and NIR bands</li>
-<li><strong>Resolution</strong>: Optimized for 10-50m spatial resolution</li>
-<li><strong>Sensors</strong>: Validated on Sentinel-2, Landsat 8, PlanetScope, Maxar</li>
-<li><strong>Values</strong>: Works with reflectance (0-1) or digital numbers</li>
-</ul>
-<h3 id="performance-tips">Performance Tips<a class="anchor-link" href="#performance-tips">¶</a></h3><ul>
-<li>Use <strong>inference_dtype='bf16'</strong> for 2-3x speedup on supported hardware</li>
-<li>Set <strong>compile_model=True</strong> for 10-20% additional speedup (after first run)</li>
-<li>Use <strong>inference_device='cuda'</strong> if GPU available</li>
-<li>Adjust <strong>patch_size</strong> based on available memory</li>
-<li>Use <strong>batch_size &gt; 1</strong> for faster batch processing</li>
-</ul>
-<h3 id="model-versions">Model Versions<a class="anchor-link" href="#model-versions">¶</a></h3><ul>
-<li><strong>v3.0</strong> (default): Latest, best accuracy</li>
-<li><strong>v2.0</strong>: Good balance of speed and accuracy</li>
-<li><strong>v1.0</strong>: Fastest, lower accuracy</li>
+<li><strong>v3.0</strong> (default): Expanded training dataset for higher accuracy.</li>
+<li><strong>v2.0</strong>: A smaller faster model ensemble with improved robustness.</li>
+<li><strong>v1.0</strong>: Baseline model release supporting the OmniCloudMask paper.</li>
 </ul>
 <h3 id="when-to-use-omnicloudmask">When to Use OmniCloudMask<a class="anchor-link" href="#when-to-use-omnicloudmask">¶</a></h3><p>✓ Pre-processing satellite imagery for analysis<br/>
 ✓ Filtering scenes based on cloud coverage<br/>
@@ -4637,7 +4475,7 @@ print("Cleaned up temporary files")</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 27, 2025 15:22:06 UTC"><span class="timeago" datetime="2025-10-27T15:22:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 27, 2025 15:22:06 UTC">2025-10-27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 30, 2025 17:19:19 UTC"><span class="timeago" datetime="2025-10-30T17:19:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 30, 2025 17:19:19 UTC">2025-10-30</span>
   </span>
 
     
